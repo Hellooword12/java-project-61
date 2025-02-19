@@ -5,13 +5,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Prime {
-    private static final int NUMBER_OF_QUESTIONS = 3;
+    private static final int NUMBER_OF_QUESTIONS = 3; // Количество вопросов
+    private static final int MAX_RANDOM_NUMBER = 100; // Максимальное рандомное число
 
     public static void primeGame() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-
-        int numberRandom = random.nextInt(100);
 
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
@@ -20,9 +19,9 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
-            int number = numberRandom;
-            boolean correctAnswer = Engine.isPrime(number);
-            System.out.println("Question: " + number);
+
+            boolean correctAnswer = Engine.isPrime(MAX_RANDOM_NUMBER);
+            System.out.println("Question: " + MAX_RANDOM_NUMBER);
 
             System.out.print("Your answer: ");
             String userAnswer = scanner.nextLine();

@@ -6,15 +6,14 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Calc {
-    private static final int NUMBER_OF_QUESTIONS = 3;
+    private static final int NUMBER_OF_QUESTIONS = 3; // Количество вопросов
+    private static final int MAX_NUMBER_ONE = 100;
+    private static final int MAX_NUMBER_TWO = 100;
 
     public static void calcGame() {
 
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-
-        int initialValue = random.nextInt(100);
-        int finalValue = random.nextInt(100);
 
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
@@ -25,8 +24,8 @@ public class Calc {
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
 
             char[] signs = {'+', '-', '*'};
-            int number1 = initialValue;
-            int number2 = finalValue;
+            int number1 = random.nextInt(MAX_NUMBER_ONE);
+            int number2 = random.nextInt(MAX_NUMBER_TWO);
             char sign = signs[random.nextInt(signs.length)];
 
             String expression = number1 + " " + sign + " " + number2;
