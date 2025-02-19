@@ -7,8 +7,12 @@ public class Progression {
     private static final int NUMBER_OF_QUESTIONS = 3;
 
     public static void progressionGame() {
-        Scanner scanner = new Scanner(System.in);
         Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+
+        int lengthProgression = random.nextInt(6) + 5; // Длина от 5 до 10
+        int startProgression = random.nextInt(20); // Начальное число от 0 до 19
+        int differenceProgression = random.nextInt(10) + 1; // Разность от 1 до 10
 
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
@@ -17,9 +21,9 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
 
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
-            int length = random.nextInt(6) + 5; // Длина от 5 до 10
-            int start = random.nextInt(20); // Начальное число от 0 до 19
-            int difference = random.nextInt(10) + 1; // Разность от 1 до 10
+            int length = lengthProgression;
+            int start = startProgression;
+            int difference = differenceProgression;
 
             int[] progression = new int[length];
             for (int j = 0; j < length; j++) {

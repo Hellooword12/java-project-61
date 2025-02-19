@@ -1,6 +1,5 @@
 package hexlet.code;
 
-
 public class Engine {
 
     // Метод для вычисления результата выражения в калькуляторе

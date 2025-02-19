@@ -11,6 +11,8 @@ public class Prime {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
+        int numberRandom = random.nextInt(100);
+
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         String name = scanner.nextLine();
@@ -18,7 +20,7 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
-            int number = random.nextInt(100);
+            int number = numberRandom;
             boolean correctAnswer = Engine.isPrime(number);
             System.out.println("Question: " + number);
 

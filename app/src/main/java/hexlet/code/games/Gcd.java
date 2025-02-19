@@ -13,6 +13,9 @@ public class Gcd {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
+        int initialValue = random.nextInt(100);
+        int finalValue = random.nextInt(100);
+
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         String name = scanner.nextLine();
@@ -21,8 +24,8 @@ public class Gcd {
 
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
 
-            int number1 = random.nextInt(100);
-            int number2 = random.nextInt(100);
+            int number1 = initialValue;
+            int number2 = finalValue;
             String expression = number1 + " " + number2;
 
             System.out.println("Question: " + expression);

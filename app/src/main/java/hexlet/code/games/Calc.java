@@ -13,6 +13,9 @@ public class Calc {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
+        int initialValue = random.nextInt(100);
+        int finalValue = random.nextInt(100);
+
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         String name = scanner.nextLine();
@@ -22,8 +25,8 @@ public class Calc {
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
 
             char[] signs = {'+', '-', '*'};
-            int number1 = random.nextInt(100);
-            int number2 = random.nextInt(100);
+            int number1 = initialValue;
+            int number2 = finalValue;
             char sign = signs[random.nextInt(signs.length)];
 
             String expression = number1 + " " + sign + " " + number2;
