@@ -21,8 +21,8 @@ public class Gcd {
 
         for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
 
-            int number1 = random.nextInt(100) + 1;
-            int number2 = random.nextInt(100) + 1;
+            int number1 = random.nextInt(100);
+            int number2 = random.nextInt(100);
             String expression = number1 + " " + number2;
 
             System.out.println("Question: " + expression);
