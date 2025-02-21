@@ -35,7 +35,7 @@ public class App {
                 System.out.println("Good bye!");
                 break;
             case GAME_GREET:
-                Cli.hell();
+                Cli.greet();
                 break;
             case GAME_EVEN:
                 Even.evenGame();
