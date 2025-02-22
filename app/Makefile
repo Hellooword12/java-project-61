@@ -1,4 +1,4 @@
-.PHONY: run-dist install build
+.PHONY: run-dist install build clean
 
 run-dist: install
 	./build/install/app/bin/app
