@@ -1,3 +1,7 @@
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/Hellooword12/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Hellooword12/java-project-61/actions)
+<a href="https://codeclimate.com/github/Hellooword12/java-project-61/maintainability"><img src="https://api.codeclimate.com/v1/badges/d3c16c3d8316084b753f/maintainability" /></a>
+
 # Игры разума
 ___________________________________
 Проект "Игры разума" состоит из пяти мини игр:
@@ -32,8 +36,4 @@ ___________________________________
 <br><a href="https://asciinema.org/a/qHibJvOPZMYTRnRQZxGoZOghB">НОД</a>
 <br><a href="https://asciinema.org/a/LtlsjJJYaV3fY6CiYnfrPskm9">Арифметическая прогрессия</a>
 <br><a href="https://asciinema.org/a/XUqQvksb7GUAJIksOn8Gt4VuO">Простое ли число?</a>
-
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/Hellooword12/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Hellooword12/java-project-61/actions)
-<a href="https://codeclimate.com/github/Hellooword12/java-project-61/maintainability"><img src="https://api.codeclimate.com/v1/badges/d3c16c3d8316084b753f/maintainability" /></a>
 
