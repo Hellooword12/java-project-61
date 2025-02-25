@@ -1,42 +1,33 @@
 package hexlet.code;
 
+import java.util.Scanner;
+
 public class Engine {
+    public static final int NUMBER_OF_QUESTIONS = 3; // Количество вопросов
 
-    // Метод для вычисления результата выражения в калькуляторе
-    public static int calculate(int num1, int num2, char sign) {
-        switch (sign) {
-            case '+':
-                return num1 + num2;
-            case '-':
-                return num1 - num2;
-            case '*':
-                return num1 * num2;
-            default:
-                throw new IllegalArgumentException("Неподдерживаемый знак: " + sign);
-        }
-    }
+    public static void startEngine(String[][] questionAndAnswers, String question) {
+        Scanner scanner = new Scanner(System.in);
 
-    // Метод для вычисления НОД
-    public static int gcd(int a, int b) {
-        while (b != 0) {
-            int temp = b;
-            b = a % b;
-            a = temp;
-        }
-        return a;
-    }
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        String name = scanner.nextLine();
+        System.out.println("Hello, " + name + "!");
+        System.out.println(question);
 
-    // Метод для вычисления простого числа
-    public static boolean isPrime(int n) {
-        if (n <= 1) {
-            return false;
-        }
-        for (int i = 2; i * i <= n; i++) {
-            if (n % i == 0) {
-                return false;
+        for (var questionAnswer : questionAndAnswers) {
+            System.out.println("Question: " + questionAnswer[0]);
+            String answer = scanner.next();
+            System.out.println("Your answer: " + answer);
+            if (!answer.equals(questionAnswer[1])) {
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
+                        + questionAnswer[1] + "'.");
+                System.out.println("Let's try again, " + name + "!");
+                return;
             }
+            System.out.println("Correct!");
         }
-        return true;
+        System.out.println("Congratulations, " + name + "!");
     }
 
 }
+

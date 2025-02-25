@@ -38,19 +38,19 @@ public class App {
                 Cli.greet();
                 break;
             case GAME_EVEN:
-                Even.evenGame();
+                Even.startGame();
                 break;
             case GAME_CALC:
-                Calc.calcGame();
+                Calc.startGame();
                 break;
             case GAME_GCD:
-                Gcd.gcdGame();
+                Gcd.startGame();
                 break;
             case GAME_PROGRESSION:
-                Progression.progressionGame();
+                Progression.startGame();
                 break;
             case GAME_PRIME:
-                Prime.primeGame();
+                Prime.startGame();
                 break;
             default:
                 System.out.println("Invalid choice. Please try again.");

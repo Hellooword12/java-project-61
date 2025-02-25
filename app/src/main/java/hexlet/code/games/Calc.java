@@ -1,51 +1,48 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
-
-import java.util.Random;
-import java.util.Scanner;
+import static hexlet.code.Engine.NUMBER_OF_QUESTIONS;
+import static hexlet.code.Engine.startEngine;
+import static hexlet.code.Utils.MAX;
+import static hexlet.code.Utils.random;
 
 public class Calc {
-    private static final int NUMBER_OF_QUESTIONS = 3; // Количество вопросов
-    private static final int MAX_NUMBER_ONE = 100;
-    private static final int MAX_NUMBER_TWO = 100;
 
-    public static void calcGame() {
+    private static final String QUESTION = "What is the result of the expression?";
 
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String name = scanner.nextLine();
-        System.out.println("Hello, " + name + "!");
-        System.out.println("What is the result of the expression?");
-
-        for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
-
-            char[] signs = {'+', '-', '*'};
-            int number1 = random.nextInt(MAX_NUMBER_ONE);
-            int number2 = random.nextInt(MAX_NUMBER_TWO);
-            char sign = signs[random.nextInt(signs.length)];
-
-            String expression = number1 + " " + sign + " " + number2;
-            int correctAnswer = Engine.calculate(number1, number2, sign);
-            System.out.println("Question: " + expression);
-
-            System.out.print("Your answer: ");
-            int userAnswer = scanner.nextInt();
-            if (userAnswer == correctAnswer) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
-                        + correctAnswer + "'.");
-                System.out.println("Let's try again, " + name + "!");
-                return;
-            }
-
+    public static String[][] generateRoundData() {
+        String[][] questionAndAnswers = new String[NUMBER_OF_QUESTIONS][2];
+        for (var questionAnswer : questionAndAnswers) {
+            int num1 = random(1, MAX);
+            int num2 = random(1, MAX);
+            var randomNumber = (int) (Math.random() * NUMBER_OF_QUESTIONS) + 1;
+            var array = new String[]{"0", "*", "+", "-"};
+            var sign = array[randomNumber];
+            questionAnswer[1] = String.valueOf(calculate(num1, num2, sign));
+            questionAnswer[0] = Integer.toString(num1)
+                    + " " + sign + " "
+                    + Integer.toString(num2);
         }
-        System.out.println("Congratulations, " + name + "!");
+        return questionAndAnswers;
     }
+
+    // Метод для вычисления результата выражения в калькуляторе
+    public static int calculate(int num1, int num2, String sign) {
+        switch (sign) {
+            case "+":
+                return num1 + num2;
+            case "-":
+                return num1 - num2;
+            case "*":
+                return num1 * num2;
+            default:
+                throw new IllegalArgumentException("Not found symbol: " + sign);
+        }
+    }
+
+    public static void startGame() {
+        startEngine(generateRoundData(), QUESTION);
+    }
+
 }
 
 

@@ -1,46 +1,38 @@
 
 package hexlet.code.games;
 
-import hexlet.code.Engine;
-
-import java.util.Random;
-import java.util.Scanner;
+import static hexlet.code.Engine.NUMBER_OF_QUESTIONS;
+import static hexlet.code.Engine.startEngine;
+import static hexlet.code.Utils.MAX;
+import static hexlet.code.Utils.random;
 
 public class Gcd {
-    private static final int NUMBER_OF_QUESTIONS = 3;  // Количество вопросов
-    private static final int MAX_RANDOM_VALUE = 100;   // Максимальное значение для генерации случайных чисел
+    private static final String QUESTION = "Find the greatest common divisor of given numbers.";
 
-    public static void gcdGame() {
-
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String name = scanner.nextLine();
-        System.out.println("Hello, " + name + "!");
-        System.out.println("Find the greatest common divisor of given numbers.");
-
-        for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
-            int number1 = random.nextInt(MAX_RANDOM_VALUE);          // Случайное число 1
-            int number2 = random.nextInt(MAX_RANDOM_VALUE);          // Случайное число 2
-            String expression = number1 + " " + number2;
-
-            System.out.println("Question: " + expression);
-
-            System.out.print("Your answer: ");
-            int userAnswer = scanner.nextInt();
-
-            int correctAnswer = Engine.gcd(number1, number2);
-
-            if (userAnswer == correctAnswer) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println(userAnswer + " is wrong answer ;(. Correct answer was " + correctAnswer + "."
-                        + " Let's try again, " + name + "!");
-                return;
-            }
+    public static String[][] generateRoundData() {
+        String[][] questionAndAnswers = new String[NUMBER_OF_QUESTIONS][2];
+        for (var questionAnswer : questionAndAnswers) {
+            int number1 = random(1, MAX);
+            int number2 = random(1, MAX);
+            questionAnswer[0] = Integer.toString(number1) + " " + Integer.toString(number2);
+            questionAnswer[1] = Integer.toString(gcd(number1, number2));
         }
-        System.out.println("Congratulations, " + name + "!");
+        return questionAndAnswers;
+
     }
+
+    // Метод для вычисления НОД
+    public static int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    public static void startGame() {
+        startEngine(generateRoundData(), QUESTION);
+    }
+
 }
