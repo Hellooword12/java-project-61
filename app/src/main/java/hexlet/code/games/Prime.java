@@ -2,11 +2,11 @@ package hexlet.code.games;
 
 import static hexlet.code.Engine.NUMBER_OF_QUESTIONS;
 import static hexlet.code.Engine.startEngine;
-import static hexlet.code.Utils.MAX;
 import static hexlet.code.Utils.random;
 
 public class Prime {
     private static final String QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    public static final int MAX = 100;
 
     public static String[][] generateRoundData() {
         String[][] questionAndAnswers = new String[NUMBER_OF_QUESTIONS][2];

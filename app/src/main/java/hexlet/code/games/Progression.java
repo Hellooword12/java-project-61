@@ -2,7 +2,6 @@
 package hexlet.code.games;
 import static hexlet.code.Engine.NUMBER_OF_QUESTIONS;
 import static hexlet.code.Engine.startEngine;
-import static hexlet.code.Utils.MAX;
 import static hexlet.code.Utils.random;
 
 public class Progression {
@@ -10,6 +9,7 @@ public class Progression {
     private static final int MAX_PROGRESSION_LENGTH = 10; // Максимальная длина прогрессии
     private static final int MIN_DIFFERENCE = 1; // Минимальная разность
     private static final int MAX_DIFFERENCE = 10; // Максимальная разность
+    public static final int MAX = 100;
 
     private static final String QUESTION = "\"What number is missing in the progression?";
 
