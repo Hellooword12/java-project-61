@@ -53,7 +53,8 @@ public class App {
                 Prime.startGame();
                 break;
             default:
-                System.out.println("Invalid choice. Please try again.");
+                System.out.println("You entered incorrect data: " + number + ". Please try again.");
+                break;
         }
     }
 }
