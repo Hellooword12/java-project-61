@@ -14,8 +14,9 @@ public class Calc {
         for (var questionAnswer : questionAndAnswers) {
             int num1 = random(1, MAX);
             int num2 = random(1, MAX);
-            var randomNumber = (int) (Math.random() * NUMBER_OF_QUESTIONS) + 1;
             var array = new String[]{"0", "*", "+", "-"};
+
+            var randomNumber = (int) (random(0, array.length)) + 1;
             var sign = array[randomNumber];
             questionAnswer[1] = String.valueOf(calculate(num1, num2, sign));
             questionAnswer[0] = Integer.toString(num1)
