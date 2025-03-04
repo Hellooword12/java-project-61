@@ -11,7 +11,7 @@ public class Progression {
     private static final int MAX_DIFFERENCE = 10; // Максимальная разность
     public static final int MAX = 100;
 
-    private static final String QUESTION = "\"What number is missing in the progression?";
+    private static final String QUESTION = "What number is missing in the progression?";
 
     public static String[][] generateRoundData() {
         String[][] questionAndAnswers = new String[NUMBER_OF_QUESTIONS][2];
